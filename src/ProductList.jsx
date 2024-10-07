@@ -268,13 +268,20 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? (
         <div className="product-grid">
-
-
+            <ProductCategories product_list={plantsArray}/>
         </div>
  ) :  (
     <CartItem onContinueShopping={handleContinueShopping}/>
 )}
     </div>
+    );
+}
+
+function ProductCategories(props) {
+    return (
+        props.product_list.map((product_category) =>
+            <li>{product_category.category}</li>
+        )
     );
 }
 
